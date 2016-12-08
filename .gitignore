@@ -1,0 +1,7 @@
+# JetBrains IDEs
+.idea/
+
+# Node Stuff
+node_modules/
+bower_components/
+npm-debug.log
