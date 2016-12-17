@@ -3,26 +3,17 @@ version: "2"
 services:
   head-server:
     environment:
-      DB_USER: "colisee"
-      DB_PASS: "colisee"
-      DB_NAME: "colisee"
-      DB_HOST: "${DOCKER_INET}"
-      DB_PORT: "5400"
-      HEAD_TOKEN: "abcd"
+      DBAPI_HOST: "localhost"
+      DBAPI_PORT: "3001"
     build: head-server/
     ports:
       - "5401:3000"
 
   play-worker:
     environment:
-      HEAD_HOST: "${DOCKER_INET}"
-      HEAD_PORT: "5401"
+      HEAD_HOST: "head-server"
+      HEAD_PORT: "3000"
       HEAD_TOKEN: "abcd"
-      DB_USER: "colisee"
-      DB_PASS: "colisee"
-      DB_NAME: "colisee"
-      DB_HOST: "${DOCKER_INET}"
-      DB_PORT: "5400"
     build: play-worker/
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
