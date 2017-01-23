@@ -5,10 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "compile": "npm-run-all compile:*",
-    "compile:src": "tsc --project src/",
-    "setup": "npm-run-all setup:*",
-    "setup:compile": "npm run compile"
+    "build": "tsc",
+    "setup": "npm install"
   },
   "author": "siggame",
   "license": "ISC",
@@ -20,13 +18,13 @@
     "@types/winston": "0.0.32",
     "body-parser": "^1.15.2",
     "config": "^1.24.0",
+    "dockerode": "^2.3.1",
     "express": "^4.14.0",
     "js-yaml": "^3.7.0",
     "request": "^2.79.0",
     "winston": "^2.3.0"
   },
   "devDependencies": {
-    "npm-run-all": "^3.1.2",
     "typescript": "^2.1.4"
   }
 }

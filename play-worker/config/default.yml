@@ -1,4 +1,6 @@
-port: 3000
-poll_interval: 5000
+polling_ms: 5000
 max_playing: 2
-logging: "debug"
+
+server_url: "https://github.com/siggame/Cerveau.git"
+server_branch: "master"
+server_file: "server_id.txt"
